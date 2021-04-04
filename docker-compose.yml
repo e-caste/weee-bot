@@ -3,3 +3,6 @@ services:
   bot:
     build: .
     restart: unless-stopped
+    # .env should be loaded by default, but it isn't, or my host already exports a variable with the same name which overrides it
+    env_file:
+      - .env
